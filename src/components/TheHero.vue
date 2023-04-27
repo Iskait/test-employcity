@@ -35,7 +35,6 @@
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
 .hero {
-  position: relative;
   padding: 2rem 0 2rem 0;
   background-color: $color-gray;
   @media (min-width: $sm) {

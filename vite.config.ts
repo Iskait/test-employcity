@@ -7,7 +7,7 @@ import svgLoader from "vite-svg-loader";
 export default defineConfig({
   plugins: [vue(), svgLoader()],
   server: {
-    host: "localhost",
+    host: true,
     port: 3000,
     open: true,
   },
