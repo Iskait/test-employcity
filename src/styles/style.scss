@@ -29,7 +29,8 @@ a {
 }
 
 html,
-body {
+body,
+#app {
   height: 100%;
   font-family: $font-body;
 }
@@ -84,5 +85,15 @@ body {
   font-weight: 700;
   &:hover {
     color: $color-accent-light;
+  }
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  color: $color-tertiary;
+  @media (min-width: $sm) {
+    column-gap: 0.75rem;
   }
 }
