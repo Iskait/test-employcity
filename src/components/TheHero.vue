@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="hero">
+  <section class="hero">
     <div class="hero__container container">
       <div class="hero__content">
         <h1 class="hero__title">
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -127,7 +127,6 @@
     border: 1px solid #6f6d7b;
     border-radius: 0.25rem;
     width: 100%;
-    cursor: pointer;
     transition: background-color 0.3s ease;
     @media (min-width: $sm) {
       max-width: 11.5rem;

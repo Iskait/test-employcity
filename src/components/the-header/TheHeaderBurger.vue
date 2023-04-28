@@ -9,12 +9,12 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div
+  <button
     @click="emit('toggle-menu')"
     :class="['header__burger', { header__burger_active: isMobileMenuOpen }]"
   >
     <span />
-  </div>
+  </button>
 </template>
 
 <style lang="scss" scoped>

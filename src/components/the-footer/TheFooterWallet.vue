@@ -9,9 +9,9 @@ defineProps<{
 <template>
   <div class="footer__wallet-item info-label">
     <component :is="wallet.component" />
-    <a class="footer__wallet-item-link" :href="wallet.url">
+    <button class="footer__wallet-item-link">
       {{ wallet.title }}
-    </a>
+    </button>
   </div>
 </template>
 
@@ -20,9 +20,6 @@ defineProps<{
 .footer {
   &__wallet-item-link {
     color: $color-tertiary;
-    &:hover {
-      color: $color-accent-light;
-    }
   }
 }
 </style>

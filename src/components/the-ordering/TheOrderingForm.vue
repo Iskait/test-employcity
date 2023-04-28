@@ -140,7 +140,6 @@ function sendRequest(event: Event) {
       height: 100%;
       align-items: center;
       justify-content: space-between;
-      cursor: pointer;
     }
   }
   &__options-list {
@@ -246,7 +245,6 @@ function sendRequest(event: Event) {
       grid-column-start: 2;
       margin-top: 0.625rem;
     }
-    cursor: pointer;
     transition: background-color 0.3s ease;
     &:hover {
       background: #286690;
