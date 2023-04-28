@@ -45,7 +45,8 @@ const socialLinks: FooterLink[] = [
     <div class="footer__container container">
       <div class="footer__information">
         <p class="footer__copyright">
-          © 2018 «LoremIpsum.net» Все права защищены.
+          © 2018 <span class="text-uppercase">«LoremIpsum.net»</span> Все права
+          защищены.
         </p>
         <div class="footer__wallets">
           <TheFooterWallet
