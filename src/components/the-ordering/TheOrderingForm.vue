@@ -1,13 +1,7 @@
 <script setup lang="ts">
 import LabelDocument from "@/assets/ordering/document.svg?component";
-import ArrowChevronDown from "@/assets/ordering/arrow-chevron-down.svg?component";
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOptions,
-  ListboxOption,
-} from "@headlessui/vue";
 import { ref } from "vue";
+import UiSelect from "../ui/ui-select/UiSelect.vue";
 
 const range = ref(50);
 
@@ -18,8 +12,6 @@ const options = [
   "Temporibus autem",
   "Itaque earum rerum",
 ];
-
-const selectedOption = ref("Выберите тип системы");
 
 function sendRequest(event: Event) {
   const form = event.target as HTMLFormElement;
@@ -32,33 +24,7 @@ function sendRequest(event: Event) {
 
 <template>
   <form class="ordering-form" @submit.prevent="sendRequest">
-    <div class="ordering-form__select">
-      <Listbox v-slot="{ open }" v-model="selectedOption" name="system">
-        <ListboxButton
-          class="ordering-form__field ordering-form__field_select-button"
-        >
-          {{ selectedOption }}
-          <ArrowChevronDown
-            :class="[
-              'ordering-form__chevron-down',
-              { 'ordering-form__chevron-down_open': open },
-            ]"
-          />
-        </ListboxButton>
-        <Transition name="fade">
-          <ListboxOptions class="ordering-form__options-list">
-            <ListboxOption
-              class="ordering-form__option"
-              v-for="option in options"
-              :key="option"
-              :value="option"
-            >
-              {{ option }}
-            </ListboxOption>
-          </ListboxOptions>
-        </Transition>
-      </Listbox>
-    </div>
+    <UiSelect :options="options" name="system" />
     <input
       class="ordering-form__field"
       type="email"
@@ -118,11 +84,6 @@ function sendRequest(event: Event) {
   @media (min-width: $md) {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  &__select {
-    position: relative;
-  }
-
   &__field {
     padding: 0.75rem;
     background: rgba(255, 255, 255, 0.85);
@@ -131,43 +92,7 @@ function sendRequest(event: Event) {
     font-size: 1.125rem;
     line-height: 1.2;
     &::placeholder {
-      color: #272733;
-    }
-    &_select-button {
-      background: rgba(255, 255, 255, 0.85);
-      display: flex;
-      width: 100%;
-      height: 100%;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-  &__options-list {
-    margin-top: 0.25rem;
-    position: absolute;
-    background-color: $color-primary;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 0.75rem;
-    padding: 1rem;
-    max-height: 11.25rem;
-    overflow-y: auto;
-    border: 1px solid $color-white;
-    border-radius: 0.5rem;
-  }
-  &__option {
-    color: $color-white;
-    transition: color 0.3s ease;
-    cursor: pointer;
-    &:hover {
-      color: $color-accent;
-    }
-  }
-  &__chevron-down {
-    transition: transform 0.3s ease;
-    &_open {
-      transform: rotate(180deg);
+      color: $color-primary;
     }
   }
   &__range {
@@ -250,15 +175,5 @@ function sendRequest(event: Event) {
       background: #286690;
     }
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
