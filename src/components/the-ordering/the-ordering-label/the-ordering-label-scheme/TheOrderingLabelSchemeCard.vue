@@ -6,11 +6,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="ordering__scheme-card">
-    <div class="ordering__scheme-card-image">
+  <div class="scheme__card">
+    <div class="scheme__image">
       <component :is="schemeCard.component" />
     </div>
-    <div class="ordering__scheme-card-description">
+    <div class="scheme__description">
       {{ schemeCard.description }}
     </div>
   </div>
@@ -18,15 +18,15 @@ defineProps<{
 
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
-.ordering {
-  &__scheme-card {
+.scheme {
+  &__card {
     display: flex;
     flex-direction: column;
     row-gap: 1.25rem;
     align-items: center;
     padding: 0 0.75rem;
   }
-  &__scheme-card-image {
+  &__image {
     width: 6.25rem;
     aspect-ratio: 1/1;
     background-color: $color-accent;
@@ -36,7 +36,7 @@ defineProps<{
     justify-content: center;
     align-items: center;
   }
-  &__scheme-card-description {
+  &__description {
     text-align: center;
     color: $color-white;
   }
