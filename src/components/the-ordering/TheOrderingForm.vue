@@ -76,101 +76,118 @@ function sendRequest(event: Event) {
 </template>
 
 <style lang="scss" scoped>
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .ordering-form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+
   @media (min-width: $md) {
     grid-template-columns: repeat(3, 1fr);
   }
+
   &__field {
-    outline: none;
-    border-radius: 0.25rem;
-    background: rgba(255, 255, 255, 0.85);
     padding: 0.75rem;
     font-size: 1.125rem;
     line-height: 1.2;
+    background: rgb(255 255 255 / 85%);
+    border-radius: 0.25rem;
+    outline: none;
+
     &::placeholder {
       color: $color-primary;
     }
   }
+
   &__range {
     display: flex;
-    row-gap: 1rem;
     flex-direction: column;
+    row-gap: 1rem;
     justify-content: space-between;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    color: $color-white;
+
     @media (min-width: $md) {
       grid-column: span 2 / span 2;
     }
-    color: $color-white;
-    font-size: 1.125rem;
-    line-height: 1.2;
   }
+
   &__input-range {
-    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
     border-radius: 0.5rem;
+
     &::-webkit-slider-runnable-track {
-      -webkit-appearance: none;
-      border-radius: 0.5rem;
-      background: #bdbdc0;
       height: 0.375rem;
+      background: #bdbdc0;
+      border-radius: 0.5rem;
+      appearance: none;
     }
+
     &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      margin-top: -0.5rem;
-      border: 3px solid $color-accent-dark;
-      border-radius: 50%;
-      background-color: $color-accent-light;
       width: 1.5rem;
       height: 1.5rem;
+      margin-top: -0.5rem;
+      background-color: $color-accent-light;
+      border: 3px solid $color-accent-dark;
+      border-radius: 50%;
+      appearance: none;
     }
   }
+
   &__status {
     display: flex;
     column-gap: 1rem;
     justify-content: space-between;
   }
+
   &__status-percentage {
     font-weight: 700;
   }
+
   &__field_invisible-input {
-    display: flex;
     position: relative;
-    background: $color-white;
+    display: flex;
     padding: 0;
+    background: $color-white;
   }
+
   &__label_invisible-input {
     display: flex;
     column-gap: 0.75rem;
-    justify-content: center;
     align-items: center;
-    cursor: pointer;
-    padding: 0.75rem;
+    justify-content: center;
     width: 100%;
-    color: #272733;
+    padding: 0.75rem;
     font-weight: 600;
+    color: #272733;
     text-transform: uppercase;
+    cursor: pointer;
   }
+
   &__input-file {
     position: absolute;
-    opacity: 0;
-    z-index: -10;
     inset: 0;
+    z-index: -10;
+    opacity: 0;
   }
+
   &__submit {
-    border: 1px solid $color-white;
-    border-radius: 0.25rem;
-    background: $color-accent;
     padding: 1rem;
     color: $color-white;
     text-transform: uppercase;
+    background: $color-accent;
+    border: 1px solid $color-white;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+
     @media (min-width: $md) {
       grid-column-start: 2;
       margin-top: 0.625rem;
     }
-    transition: background-color 0.3s ease;
+
     &:hover {
       background: #286690;
     }

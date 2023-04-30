@@ -33,77 +33,90 @@
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .hero {
+  padding: 2rem 0;
   background-color: $color-gray;
-  padding: 2rem 0 2rem 0;
+
   @media (min-width: $sm) {
+    padding: 10rem 0 9rem;
     margin-top: -4.5rem;
     background-image: url("/hero/hero-image.webp");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    padding: 10rem 0 9rem 0;
   }
+
   @media (min-width: $md) {
     margin-top: -6rem;
   }
+
   @media (min-width: $lg) {
+    padding: 13.5rem 0 12.75rem;
     margin-top: -6rem;
-    padding: 13.5rem 0 12.75rem 0;
   }
+
   &__content {
     display: flex;
-    row-gap: 3rem;
     flex-direction: column;
+    row-gap: 3rem;
+
     @media (min-width: $lg) {
       row-gap: 5rem;
     }
   }
+
   &__title {
     max-width: 780px;
-    font-weight: 700;
     font-size: 2rem;
+    font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
+
     @media (min-width: $sm) {
       font-size: 3rem;
     }
   }
+
   &__description {
     display: flex;
-    row-gap: 0.75rem;
     flex-direction: column;
+    row-gap: 0.75rem;
   }
 
   &__sub-title {
-    color: $color-black;
     font-weight: 700;
     line-height: 1.25;
+    color: $color-black;
+
     @media (min-width: $sm) {
       font-size: 1.25rem;
       line-height: 1.2;
     }
   }
+
   &__list {
     display: flex;
-    row-gap: 0.25rem;
     flex-direction: column;
+    row-gap: 0.25rem;
   }
+
   &__list-item {
     display: flex;
     column-gap: 0.75rem;
     align-items: center;
     font-size: 0.875;
-    line-height: 1.5;
     line-height: 1.2;
+
     &::before {
       flex-shrink: 0;
-      background-color: $color-black;
       width: 0.3125rem;
       height: 0.125rem;
       content: "";
+      background-color: $color-black;
     }
+
     @media (min-width: $sm) {
       font-size: 1.25rem;
     }
@@ -111,34 +124,40 @@
 
   &__order-info {
     display: flex;
-    column-gap: 2rem;
-    row-gap: 1rem;
     flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 2rem;
+
     @media (min-width: $sm) {
-      column-gap: 2rem;
       flex-direction: row;
+      column-gap: 2rem;
     }
   }
+
   &__button {
-    transition: background-color 0.3s ease;
-    border: 1px solid #6f6d7b;
-    border-radius: 0.25rem;
-    background-color: $color-white;
-    padding: 1rem 2.5rem;
     width: 100%;
+    padding: 1rem 2.5rem;
     color: #2a2b30;
     text-transform: uppercase;
+    background-color: $color-white;
+    border: 1px solid #6f6d7b;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+
     @media (min-width: $sm) {
       max-width: 11.5rem;
     }
+
     &:hover {
       background-color: $color-secondary;
     }
   }
+
   &__button_accent {
-    border-color: $color-white;
-    background-color: $color-accent;
     color: $color-white;
+    background-color: $color-accent;
+    border-color: $color-white;
+
     &:hover {
       background-color: $color-accent-dark;
     }

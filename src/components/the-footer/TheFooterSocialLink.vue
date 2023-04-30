@@ -14,7 +14,8 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .footer {
   &__social-item {
     color: $color-white;

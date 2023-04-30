@@ -17,25 +17,28 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .scheme {
   &__card {
     display: flex;
-    row-gap: 1.25rem;
     flex-direction: column;
+    row-gap: 1.25rem;
     align-items: center;
     padding: 0 0.75rem;
   }
+
   &__image {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 6.25rem;
+    aspect-ratio: 1/1;
+    background-color: $color-accent;
     border: 0.3125rem solid #286690;
     border-radius: 50%;
-    background-color: $color-accent;
-    aspect-ratio: 1/1;
-    width: 6.25rem;
   }
+
   &__description {
     color: $color-white;
     text-align: center;

@@ -16,7 +16,8 @@ defineProps<{
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .footer {
   &__wallet-item-link {
     color: $color-tertiary;

@@ -17,44 +17,53 @@ import TheOrderingLabelScheme from "./the-ordering-label-scheme/TheOrderingLabel
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .ordering {
   &__label {
     display: flex;
+    flex-direction: column;
     row-gap: 2rem;
+    align-items: center;
+
     @media (min-width: $md) {
       row-gap: 4rem;
     }
+
     @media (min-width: $lg) {
       row-gap: 5rem;
     }
-    flex-direction: column;
-    align-items: center;
   }
+
   &__header {
     display: flex;
-    row-gap: 1rem;
     flex-direction: column;
+    row-gap: 1rem;
+
     @media (min-width: $lg) {
       row-gap: 2rem;
     }
   }
+
   &__title {
-    color: $color-white;
-    font-weight: 800;
     font-size: 1.75rem;
+    font-weight: 800;
     line-height: 1.2;
+    color: $color-white;
     text-align: center;
     text-transform: uppercase;
+
     @media (min-width: $sm) {
       font-size: 2.25rem;
     }
   }
+
   &__description {
-    color: $color-secondary;
     font-size: 0.875rem;
     line-height: 1.2;
+    color: $color-secondary;
     text-align: center;
+
     @media (min-width: $sm) {
       font-size: 1.125rem;
     }

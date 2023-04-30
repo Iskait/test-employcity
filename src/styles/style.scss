@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Raleway:wght@400;800&display=swap");
-@import "./_variables.scss";
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Raleway:wght@400;800&display=swap";
+@import "./variables";
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
+  padding: 0;
   margin: 0;
   border: 0;
-  padding: 0;
 }
 
 h1,
@@ -15,8 +16,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: inherit;
   font-size: inherit;
+  font-weight: inherit;
 }
 
 li {
@@ -51,25 +52,28 @@ body,
 }
 
 .container {
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
-  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 
   @media (min-width: $sm) {
+    max-width: $sm;
     padding-right: 0.75rem;
     padding-left: 0.75rem;
-    max-width: $sm;
   }
+
   @media (min-width: $md) {
     max-width: $md;
   }
+
   @media (min-width: $lg) {
+    max-width: $lg;
     padding-right: 1.25rem;
     padding-left: 1.25rem;
-    max-width: $lg;
   }
+
   @media (min-width: $xl) {
     max-width: $xl;
   }
@@ -84,10 +88,11 @@ body,
 }
 
 .link {
-  transition: color 0.3s ease;
-  cursor: pointer;
-  color: $color-white;
   font-weight: 700;
+  color: $color-white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
   &:hover {
     color: $color-accent-light;
   }
@@ -98,6 +103,7 @@ body,
   column-gap: 0.25rem;
   align-items: center;
   color: $color-tertiary;
+
   @media (min-width: $sm) {
     column-gap: 0.75rem;
   }

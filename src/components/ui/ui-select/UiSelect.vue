@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import ArrowChevronDown from "@/assets/ordering/arrow-chevron-down.svg?component";
 import useClickOutside from "@/composables/useClickOutside";
+import { ref } from "vue";
 
 defineProps<{
   options: string[];
@@ -67,62 +67,72 @@ useClickOutside(uiSelect, () => {
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
 
 .ui-select {
   position: relative;
+  background: rgb(255 255 255 / 85%);
   border-radius: 0.25rem;
-  background: rgba(255, 255, 255, 0.85);
+
   &__hidden-input {
     position: absolute;
-    opacity: 0;
+    inset: 0;
     z-index: -1;
-    inset: 0px;
+    opacity: 0;
   }
+
   &__button {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0.75rem;
+    justify-content: space-between;
     width: 100%;
+    padding: 0.75rem;
     font-size: 1.125rem;
     line-height: 1.2;
   }
+
   &__button-text {
     color: $color-primary;
+
     &_active {
       color: $color-black;
     }
   }
+
   &__chevron-down {
     transition: transform 0.3s ease;
+
     &_open {
       transform: rotate(180deg);
     }
   }
+
   &__options {
-    display: flex;
     position: absolute;
-    row-gap: 0.75rem;
+    display: flex;
     flex-direction: column;
-    margin-top: 0.25rem;
-    border: 1px solid $color-white;
-    border-radius: 0.5rem;
-    background-color: $color-primary;
-    padding: 1rem;
+    row-gap: 0.75rem;
     width: 100%;
     max-height: 11.25rem;
+    padding: 1rem;
+    margin-top: 0.25rem;
     overflow-y: auto;
+    background-color: $color-primary;
+    border: 1px solid $color-white;
+    border-radius: 0.5rem;
   }
+
   &__option {
-    transition: color 0.3s ease;
-    cursor: pointer;
     color: $color-white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
     &:hover {
       color: $color-accent;
     }
   }
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;

@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import Mail from "@/assets/footer/mail.svg?component";
+import QiwiWallet from "@/assets/footer/qiwi.svg?component";
+import VK from "@/assets/footer/vk.svg?component";
+import WebMoney from "@/assets/footer/web-money.svg?component";
+import YandexMoney from "@/assets/footer/yandex-money.svg?component";
 import TheFooterWallet from "@/components/the-footer/TheFooterWallet.vue";
 import { FooterLink } from "@/types/Utilities";
-import QiwiWallet from "@/assets/footer/qiwi.svg?component";
-import YandexMoney from "@/assets/footer/yandex-money.svg?component";
-import WebMoney from "@/assets/footer/web-money.svg?component";
-import Mail from "@/assets/footer/mail.svg?component";
-import VK from "@/assets/footer/vk.svg?component";
 import TheFooterSocialLink from "./TheFooterSocialLink.vue";
 
 const wallets: FooterLink[] = [
@@ -68,50 +68,60 @@ const socialLinks: FooterLink[] = [
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .footer {
   background: #3d4050;
+
   &__information {
     display: flex;
-    row-gap: 1rem;
     flex-direction: column;
+    row-gap: 1rem;
     justify-content: space-between;
     padding: 1rem 0;
     font-size: 0.75rem;
     line-height: 1.33;
+
     @media (min-width: $lg) {
-      column-gap: 2rem;
       flex-direction: row;
+      column-gap: 2rem;
       align-items: center;
     }
+
     @media (min-width: $xl) {
       column-gap: 2.5rem;
     }
   }
+
   &__copyright {
     order: 2;
     color: $color-white;
     text-align: center;
+
     @media (min-width: $lg) {
       order: 0;
       text-align: left;
     }
   }
+
   &__wallets {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     @media (min-width: $lg) {
       column-gap: 1rem;
+      padding: 0 1.5rem;
       border-right: 1px solid $color-tertiary;
       border-left: 1px solid $color-tertiary;
-      padding: 0 1.5rem;
     }
+
     @media (min-width: $xl) {
       column-gap: 2.25rem;
       padding: 0 2.5rem;
     }
   }
+
   &__social {
     display: flex;
     column-gap: 2.25rem;

@@ -32,7 +32,7 @@ const links: Link[] = [
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
 
 .header {
   &__links {
@@ -42,13 +42,16 @@ const links: Link[] = [
 
     &.hide-mobile {
       display: none;
+
       @media (min-width: $md) {
         display: flex;
       }
     }
+
     @media (min-width: $md) {
       flex-direction: row;
     }
+
     @media (min-width: $lg) {
       column-gap: 3.75rem;
     }

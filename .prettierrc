@@ -1,3 +1,4 @@
 {
-  "plugins": ["prettier-plugin-css-order"]
+  "plugins": ["prettier-stylelint"],
+  "endOfLine": "lf"
 }

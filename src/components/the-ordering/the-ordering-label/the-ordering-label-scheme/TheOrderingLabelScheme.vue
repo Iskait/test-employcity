@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import Banknote from "@/assets/ordering/banknote.svg?component";
+import Mail from "@/assets/ordering/mail.svg?component";
+import Percent from "@/assets/ordering/percent.svg?component";
+import Search from "@/assets/ordering/search.svg?component";
+import Subtract from "@/assets/ordering/subtract.svg?component";
 import { OrderingLabelSchemeCard } from "@/types/Ordering";
 import TheOrderingLabelSchemeCard from "./TheOrderingLabelSchemeCard.vue";
-import Search from "@/assets/ordering/search.svg?component";
-import Percent from "@/assets/ordering/percent.svg?component";
-import Subtract from "@/assets/ordering/subtract.svg?component";
-import Mail from "@/assets/ordering/mail.svg?component";
-import Banknote from "@/assets/ordering/banknote.svg?component";
 
 const schemeCards: OrderingLabelSchemeCard[] = [
   {
@@ -43,20 +43,24 @@ const schemeCards: OrderingLabelSchemeCard[] = [
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
+
 .scheme {
+  z-index: 20;
   display: grid;
   gap: 1.75rem;
-  z-index: 20;
   max-width: 20rem;
+
   @media (min-width: $sm) {
     grid-template-columns: repeat(3, 1fr);
     max-width: none;
   }
+
   @media (min-width: $md) {
     grid-template-columns: repeat(5, 1fr);
     column-gap: 1rem;
   }
+
   @media (min-width: $lg) {
     column-gap: 2rem;
   }

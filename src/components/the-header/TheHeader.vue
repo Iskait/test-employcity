@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import TheHeaderLinks from "./TheHeaderLinks.vue";
 import TheHeaderBurger from "./TheHeaderBurger.vue";
+import TheHeaderLinks from "./TheHeaderLinks.vue";
 
 const isMobileMenuOpen = ref(false);
 
@@ -41,30 +41,33 @@ watch(isMobileMenuOpen, () => {
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_variables.scss";
+@import "@/styles/variables";
 
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(16, 16, 29, 0.9);
+  background: rgb(16 16 29 / 90%);
+
   &__row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem 0;
+
     @media (min-width: $md) {
       padding: 2rem 0;
     }
   }
 
   &__logo {
-    color: $color-white;
-    font-weight: 800;
-    font-size: 1.25rem;
-    line-height: 1.2;
     font-family: $font-headline;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: $color-white;
     text-transform: uppercase;
+
     @media (min-width: $sm) {
       font-size: 1.75rem;
       line-height: 1.15;
@@ -73,13 +76,15 @@ watch(isMobileMenuOpen, () => {
 
   &__menu {
     position: fixed;
-    inset: 3.5rem 0 0 0;
-    background: rgba(16, 16, 29, 0.9);
+    inset: 3.5rem 0 0;
     padding: 1rem 0;
     overflow-y: auto;
+    background: rgb(16 16 29 / 90%);
+
     @media (min-width: $sm) {
-      inset: 4rem 0 0 0;
+      inset: 4rem 0 0;
     }
+
     @media (min-width: $md) {
       display: none;
     }
@@ -88,13 +93,13 @@ watch(isMobileMenuOpen, () => {
 
 .fade-enter-active,
 .fade-leave-active {
-  transform: translateX(0);
   transition: transform 0.5s ease, opacity 0.3s ease;
+  transform: translateX(0);
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  transform: translateX(-200%);
   opacity: 0;
+  transform: translateX(-200%);
 }
 </style>
