@@ -73,9 +73,9 @@ const socialLinks: FooterLink[] = [
   background: #3d4050;
   &__information {
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     row-gap: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 1rem 0;
     font-size: 0.75rem;
     line-height: 1.33;
@@ -89,8 +89,8 @@ const socialLinks: FooterLink[] = [
     }
   }
   &__copyright {
-    color: $color-white;
     order: 2;
+    color: $color-white;
     text-align: center;
     @media (min-width: $lg) {
       order: 0;
@@ -99,13 +99,13 @@ const socialLinks: FooterLink[] = [
   }
   &__wallets {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     @media (min-width: $lg) {
       column-gap: 1rem;
-      padding: 0 1.5rem;
-      border-left: 1px solid $color-tertiary;
       border-right: 1px solid $color-tertiary;
+      border-left: 1px solid $color-tertiary;
+      padding: 0 1.5rem;
     }
     @media (min-width: $xl) {
       column-gap: 2.25rem;

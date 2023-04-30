@@ -10,8 +10,8 @@ const emit = defineEmits<{
 
 <template>
   <button
-    @click="emit('toggle-menu')"
     :class="['header__burger', { header__burger_active: isMobileMenuOpen }]"
+    @click="emit('toggle-menu')"
   >
     <span />
   </button>
@@ -22,9 +22,9 @@ const emit = defineEmits<{
 .header {
   &__burger {
     position: relative;
+    cursor: pointer;
     width: 1.875rem;
     height: 1.125rem;
-    cursor: pointer;
     @media (min-width: $md) {
       display: none;
     }
@@ -33,10 +33,10 @@ const emit = defineEmits<{
     &::after {
       position: absolute;
       left: 0;
+      transition: all 0.3s ease 0s;
+      background-color: $color-white;
       width: 100%;
       height: 10%;
-      background-color: $color-white;
-      transition: all 0.3s ease 0s;
     }
     &::before,
     &::after {

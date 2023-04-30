@@ -71,22 +71,22 @@ useClickOutside(uiSelect, () => {
 
 .ui-select {
   position: relative;
-  background: rgba(255, 255, 255, 0.85);
   border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.85);
   &__hidden-input {
-    opacity: 0;
     position: absolute;
-    inset: 0px;
+    opacity: 0;
     z-index: -1;
+    inset: 0px;
   }
   &__button {
-    padding: 0.75rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    width: 100%;
     font-size: 1.125rem;
     line-height: 1.2;
-    align-items: center;
-    width: 100%;
   }
   &__button-text {
     color: $color-primary;
@@ -101,23 +101,23 @@ useClickOutside(uiSelect, () => {
     }
   }
   &__options {
-    margin-top: 0.25rem;
-    position: absolute;
-    background-color: $color-primary;
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    position: absolute;
     row-gap: 0.75rem;
-    padding: 1rem;
-    max-height: 11.25rem;
-    overflow-y: auto;
+    flex-direction: column;
+    margin-top: 0.25rem;
     border: 1px solid $color-white;
     border-radius: 0.5rem;
+    background-color: $color-primary;
+    padding: 1rem;
+    width: 100%;
+    max-height: 11.25rem;
+    overflow-y: auto;
   }
   &__option {
-    color: $color-white;
     transition: color 0.3s ease;
     cursor: pointer;
+    color: $color-white;
     &:hover {
       color: $color-accent;
     }

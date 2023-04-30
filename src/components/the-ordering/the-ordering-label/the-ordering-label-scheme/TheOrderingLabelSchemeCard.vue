@@ -21,24 +21,24 @@ defineProps<{
 .scheme {
   &__card {
     display: flex;
-    flex-direction: column;
     row-gap: 1.25rem;
+    flex-direction: column;
     align-items: center;
     padding: 0 0.75rem;
   }
   &__image {
-    width: 6.25rem;
-    aspect-ratio: 1/1;
-    background-color: $color-accent;
-    border-radius: 50%;
-    border: 0.3125rem solid #286690;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0.3125rem solid #286690;
+    border-radius: 50%;
+    background-color: $color-accent;
+    aspect-ratio: 1/1;
+    width: 6.25rem;
   }
   &__description {
-    text-align: center;
     color: $color-white;
+    text-align: center;
   }
 }
 </style>

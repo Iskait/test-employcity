@@ -29,7 +29,7 @@ watch(isMobileMenuOpen, () => {
           @toggle-menu="isMobileMenuOpen = !isMobileMenuOpen"
         />
         <Transition name="fade">
-          <div class="header__menu" v-if="isMobileMenuOpen">
+          <div v-if="isMobileMenuOpen" class="header__menu">
             <div class="header__menu_container container">
               <TheHeaderLinks />
             </div>
@@ -44,10 +44,10 @@ watch(isMobileMenuOpen, () => {
 @import "@/styles/_variables.scss";
 
 .header {
-  background: rgba(16, 16, 29, 0.9);
   position: sticky;
   top: 0;
   z-index: 50;
+  background: rgba(16, 16, 29, 0.9);
   &__row {
     display: flex;
     justify-content: space-between;
@@ -60,11 +60,11 @@ watch(isMobileMenuOpen, () => {
 
   &__logo {
     color: $color-white;
-    font-family: $font-headline;
+    font-weight: 800;
     font-size: 1.25rem;
     line-height: 1.2;
+    font-family: $font-headline;
     text-transform: uppercase;
-    font-weight: 800;
     @media (min-width: $sm) {
       font-size: 1.75rem;
       line-height: 1.15;
@@ -94,7 +94,7 @@ watch(isMobileMenuOpen, () => {
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
   transform: translateX(-200%);
+  opacity: 0;
 }
 </style>

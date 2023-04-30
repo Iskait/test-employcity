@@ -47,11 +47,11 @@ function sendRequest(event: Event) {
         <p class="ordering-form__status-percentage">{{ range }}%</p>
       </div>
       <input
+        v-model="range"
         class="ordering-form__input-range"
         type="range"
         name="range"
         required
-        v-model="range"
       />
     </div>
 
@@ -79,16 +79,16 @@ function sendRequest(event: Event) {
 @import "@/styles/_variables.scss";
 .ordering-form {
   display: grid;
-  gap: 2rem;
   grid-template-columns: 1fr;
+  gap: 2rem;
   @media (min-width: $md) {
     grid-template-columns: repeat(3, 1fr);
   }
   &__field {
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.85);
     outline: none;
     border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 0.75rem;
     font-size: 1.125rem;
     line-height: 1.2;
     &::placeholder {
@@ -97,9 +97,9 @@ function sendRequest(event: Event) {
   }
   &__range {
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     row-gap: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
     @media (min-width: $md) {
       grid-column: span 2 / span 2;
     }
@@ -108,64 +108,64 @@ function sendRequest(event: Event) {
     line-height: 1.2;
   }
   &__input-range {
-    border-radius: 0.5rem;
     -webkit-appearance: none;
     cursor: pointer;
+    border-radius: 0.5rem;
     &::-webkit-slider-runnable-track {
       -webkit-appearance: none;
-      height: 0.375rem;
-      background: #bdbdc0;
       border-radius: 0.5rem;
+      background: #bdbdc0;
+      height: 0.375rem;
     }
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
-      height: 1.5rem;
-      width: 1.5rem;
+      margin-top: -0.5rem;
+      border: 3px solid $color-accent-dark;
       border-radius: 50%;
       background-color: $color-accent-light;
-      border: 3px solid $color-accent-dark;
-      margin-top: -0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
   &__status {
     display: flex;
-    justify-content: space-between;
     column-gap: 1rem;
+    justify-content: space-between;
   }
   &__status-percentage {
     font-weight: 700;
   }
   &__field_invisible-input {
-    position: relative;
-    padding: 0;
-    background: $color-white;
     display: flex;
+    position: relative;
+    background: $color-white;
+    padding: 0;
   }
   &__label_invisible-input {
-    padding: 0.75rem;
-    font-weight: 600;
-    color: #272733;
     display: flex;
-    width: 100%;
+    column-gap: 0.75rem;
     justify-content: center;
     align-items: center;
-    column-gap: 0.75rem;
-    text-transform: uppercase;
     cursor: pointer;
+    padding: 0.75rem;
+    width: 100%;
+    color: #272733;
+    font-weight: 600;
+    text-transform: uppercase;
   }
   &__input-file {
-    opacity: 0;
     position: absolute;
-    inset: 0;
+    opacity: 0;
     z-index: -10;
+    inset: 0;
   }
   &__submit {
+    border: 1px solid $color-white;
+    border-radius: 0.25rem;
     background: $color-accent;
     padding: 1rem;
-    border: 1px solid $color-white;
-    text-transform: uppercase;
     color: $color-white;
-    border-radius: 0.25rem;
+    text-transform: uppercase;
     @media (min-width: $md) {
       grid-column-start: 2;
       margin-top: 0.625rem;

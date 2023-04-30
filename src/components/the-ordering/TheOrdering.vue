@@ -17,19 +17,19 @@ import TheOrderingForm from "./TheOrderingForm.vue";
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
 .ordering {
-  padding: 4rem 0 4rem 0;
-  background-color: #272733;
   background-image: url("/ordering/world-map.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #272733;
+  padding: 4rem 0 4rem 0;
   @media (min-width: $md) {
     padding: 7.5rem 0 12.75rem 0;
   }
   &__block {
     display: flex;
-    flex-direction: column;
     row-gap: 3.5rem;
+    flex-direction: column;
     @media (min-width: $md) {
       row-gap: 5rem;
     }

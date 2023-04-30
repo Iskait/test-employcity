@@ -45,9 +45,9 @@ const schemeCards: OrderingLabelSchemeCard[] = [
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
 .scheme {
-  z-index: 20;
   display: grid;
   gap: 1.75rem;
+  z-index: 20;
   max-width: 20rem;
   @media (min-width: $sm) {
     grid-template-columns: repeat(3, 1fr);

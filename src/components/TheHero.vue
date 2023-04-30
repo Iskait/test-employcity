@@ -35,45 +35,45 @@
 <style scoped lang="scss">
 @import "@/styles/_variables.scss";
 .hero {
-  padding: 2rem 0 2rem 0;
   background-color: $color-gray;
+  padding: 2rem 0 2rem 0;
   @media (min-width: $sm) {
     margin-top: -4.5rem;
-    padding: 10rem 0 9rem 0;
     background-image: url("/hero/hero-image.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10rem 0 9rem 0;
   }
   @media (min-width: $md) {
     margin-top: -6rem;
   }
   @media (min-width: $lg) {
-    padding: 13.5rem 0 12.75rem 0;
     margin-top: -6rem;
+    padding: 13.5rem 0 12.75rem 0;
   }
   &__content {
     display: flex;
-    flex-direction: column;
     row-gap: 3rem;
+    flex-direction: column;
     @media (min-width: $lg) {
       row-gap: 5rem;
     }
   }
   &__title {
-    text-transform: uppercase;
-    font-weight: 700;
     max-width: 780px;
+    font-weight: 700;
     font-size: 2rem;
     line-height: 1.2;
+    text-transform: uppercase;
     @media (min-width: $sm) {
       font-size: 3rem;
     }
   }
   &__description {
     display: flex;
-    flex-direction: column;
     row-gap: 0.75rem;
+    flex-direction: column;
   }
 
   &__sub-title {
@@ -87,22 +87,22 @@
   }
   &__list {
     display: flex;
-    flex-direction: column;
     row-gap: 0.25rem;
+    flex-direction: column;
   }
   &__list-item {
     display: flex;
     column-gap: 0.75rem;
     align-items: center;
-    line-height: 1.5;
     font-size: 0.875;
+    line-height: 1.5;
     line-height: 1.2;
     &::before {
+      flex-shrink: 0;
+      background-color: $color-black;
       width: 0.3125rem;
       height: 0.125rem;
       content: "";
-      background-color: $color-black;
-      flex-shrink: 0;
     }
     @media (min-width: $sm) {
       font-size: 1.25rem;
@@ -115,19 +115,19 @@
     row-gap: 1rem;
     flex-direction: column;
     @media (min-width: $sm) {
-      flex-direction: row;
       column-gap: 2rem;
+      flex-direction: row;
     }
   }
   &__button {
-    background-color: $color-white;
-    text-transform: uppercase;
-    padding: 1rem 2.5rem;
-    color: #2a2b30;
+    transition: background-color 0.3s ease;
     border: 1px solid #6f6d7b;
     border-radius: 0.25rem;
+    background-color: $color-white;
+    padding: 1rem 2.5rem;
     width: 100%;
-    transition: background-color 0.3s ease;
+    color: #2a2b30;
+    text-transform: uppercase;
     @media (min-width: $sm) {
       max-width: 11.5rem;
     }
