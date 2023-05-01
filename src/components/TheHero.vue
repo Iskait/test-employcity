@@ -36,25 +36,19 @@
 @import "@/styles/variables";
 
 .hero {
-  padding: 2rem 0;
+  padding: 6.5rem 0 2rem;
   background-color: $color-gray;
 
   @media (min-width: $sm) {
     padding: 10rem 0 9rem;
-    margin-top: -4.5rem;
     background-image: url("/hero/hero-image.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
 
-  @media (min-width: $md) {
-    margin-top: -6rem;
-  }
-
   @media (min-width: $lg) {
     padding: 12.5rem 0 12.75rem;
-    margin-top: -6rem;
   }
 
   &__content {

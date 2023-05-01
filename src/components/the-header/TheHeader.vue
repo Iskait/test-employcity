@@ -29,8 +29,8 @@ watch(isMobileMenuOpen, () => {
           @toggle-menu="isMobileMenuOpen = !isMobileMenuOpen"
         />
         <Transition name="fade">
-          <div v-if="isMobileMenuOpen" class="header__menu">
-            <div class="header__menu_container container">
+          <div v-if="isMobileMenuOpen" class="header__menu mobile-menu">
+            <div class="mobile-menu__container container">
               <TheHeaderLinks />
             </div>
           </div>
@@ -44,8 +44,10 @@ watch(isMobileMenuOpen, () => {
 @import "@/styles/variables";
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 50;
   background: rgb(16 16 29 / 90%);
 
@@ -73,21 +75,23 @@ watch(isMobileMenuOpen, () => {
       line-height: 1.15;
     }
   }
+}
 
-  &__menu {
-    position: fixed;
-    inset: 3.5rem 0 0;
-    padding: 1rem 0;
-    overflow-y: auto;
-    background: rgb(16 16 29 / 90%);
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  inset: 3.5rem 0 0;
+  padding: 2rem 0;
+  overflow-y: auto;
+  background: rgb(16 16 29 / 90%);
+  backdrop-filter: blur(0.25rem);
 
-    @media (min-width: $sm) {
-      inset: 4rem 0 0;
-    }
+  @media (min-width: $sm) {
+    inset: 4rem 0 0;
+  }
 
-    @media (min-width: $md) {
-      display: none;
-    }
+  @media (min-width: $md) {
+    display: none;
   }
 }
 
