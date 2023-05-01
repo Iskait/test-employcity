@@ -16,7 +16,7 @@ https://iskait.github.io/test-employcity/
 pnpm run dev
 ```
 
-#### Билд
+#### Билд проекта
 
 ```
 pnpm run build
@@ -28,13 +28,31 @@ pnpm run build
 pnpm run preview
 ```
 
-#### Линт
+#### Запуск Eslint
 
 ```
 pnpm run lint
 ```
 
-### Prettier
+#### Запуск Eslint с исправлениями
+
+```
+pnpm run lint:fix
+```
+
+#### Запуск Stylelint
+
+```
+pnpm run stylelint
+```
+
+#### Запуск Stylelint с исправлениями
+
+```
+pnpm run stylelint:fix
+```
+
+### Запуск Prettier
 
 ```
 pnpm run prettier
