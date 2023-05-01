@@ -1,8 +1,9 @@
 {
   "name": "test-employcity",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
+  "homepage": "https://iskait.github.io/test-employcity/",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
