@@ -11,7 +11,7 @@ import TheFooterSocialLink from "./TheFooterSocialLink.vue";
 const wallets: FooterLink[] = [
   {
     component: QiwiWallet,
-    title: "Qiwi wallet",
+    title: "QIWI wallet",
     url: "#",
   },
   {

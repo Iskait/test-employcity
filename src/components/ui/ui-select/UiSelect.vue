@@ -28,35 +28,35 @@ useClickOutside(uiSelect, () => {
 </script>
 
 <template>
-  <div ref="uiSelect" class="ui-select">
+  <div ref="uiSelect" class="select">
     <input
       ref="input"
       type="text"
       required
-      class="ui-select__hidden-input"
+      class="select__hidden-input"
       :name="name"
     />
-    <button type="button" class="ui-select__button" @click="isOpen = !isOpen">
+    <button type="button" class="select__button" @click="isOpen = !isOpen">
       <span
         :class="[
-          'ui-select__button-text',
-          { 'ui-select__button-text_active': selectedOption.length },
+          'select__button-text',
+          { 'select__button-text_active': selectedOption.length },
         ]"
         >{{ selectedOption || "Выберите тип системы" }}</span
       >
       <ArrowChevronDown
         :class="[
-          'ui-select__chevron-down',
-          { 'ui-select__chevron-down_open': isOpen },
+          'select__chevron-down',
+          { 'select__chevron-down_open': isOpen },
         ]"
       />
     </button>
     <Transition name="fade">
-      <ul v-if="isOpen" class="ui-select__options">
+      <ul v-if="isOpen" class="select__options">
         <li
           v-for="option in options"
           :key="option"
-          class="ui-select__option"
+          class="select__option"
           @click="changeOption(option)"
         >
           {{ option }}
@@ -69,7 +69,7 @@ useClickOutside(uiSelect, () => {
 <style scoped lang="scss">
 @import "@/styles/variables";
 
-.ui-select {
+.select {
   position: relative;
   background: rgb(255 255 255 / 85%);
   border-radius: 0.25rem;

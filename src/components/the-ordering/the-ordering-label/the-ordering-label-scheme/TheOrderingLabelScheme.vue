@@ -33,7 +33,7 @@ const schemeCards: OrderingLabelSchemeCard[] = [
 </script>
 
 <template>
-  <div class="scheme">
+  <div class="ordering__scheme scheme">
     <TheOrderingLabelSchemeCard
       v-for="schemeCard in schemeCards"
       :key="schemeCard.description"

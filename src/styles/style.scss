@@ -30,6 +30,7 @@ a {
 }
 
 button {
+  font-size: inherit;
   cursor: pointer;
   background-color: transparent;
 }
@@ -76,6 +77,8 @@ body,
 
   @media (min-width: $xl) {
     max-width: $xl;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 

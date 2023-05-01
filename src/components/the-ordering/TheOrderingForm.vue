@@ -39,22 +39,19 @@ function sendRequest(event: Event) {
       required
       placeholder="Ваше имя"
     />
-    <div class="ordering-form__range">
-      <div class="ordering-form__status">
-        <p class="ordering-form__status-text">
-          Sed ut perspiciatis, unde omnis iste natus
-        </p>
-        <p class="ordering-form__status-percentage">{{ range }}%</p>
+    <div class="ordering-form__range range">
+      <div class="range__header">
+        <p class="range__text">Sed ut perspiciatis, unde omnis iste natus</p>
+        <p class="range__percentage">{{ range }}%</p>
       </div>
       <input
         v-model="range"
-        class="ordering-form__input-range"
+        class="range__input"
         type="range"
         name="range"
         required
       />
     </div>
-
     <div class="ordering-form__field ordering-form__field_invisible-input">
       <label
         class="ordering-form__label ordering-form__label_invisible-input"
@@ -65,7 +62,7 @@ function sendRequest(event: Event) {
       </label>
       <input
         id="file"
-        class="ordering-form__input-file"
+        class="ordering-form__file"
         type="file"
         name="file"
         required
@@ -100,58 +97,17 @@ function sendRequest(event: Event) {
     }
   }
 
-  &__range {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    justify-content: space-between;
-    font-size: 1.125rem;
-    line-height: 1.2;
-    color: $color-white;
-
-    @media (min-width: $md) {
-      grid-column: span 2 / span 2;
-    }
-  }
-
-  &__input-range {
-    appearance: none;
-    cursor: pointer;
-    border-radius: 0.5rem;
-
-    &::-webkit-slider-runnable-track {
-      height: 0.375rem;
-      background: #bdbdc0;
-      border-radius: 0.5rem;
-      appearance: none;
-    }
-
-    &::-webkit-slider-thumb {
-      width: 1.5rem;
-      height: 1.5rem;
-      margin-top: -0.5rem;
-      background-color: $color-accent-light;
-      border: 3px solid $color-accent-dark;
-      border-radius: 50%;
-      appearance: none;
-    }
-  }
-
-  &__status {
-    display: flex;
-    column-gap: 1rem;
-    justify-content: space-between;
-  }
-
-  &__status-percentage {
-    font-weight: 700;
-  }
-
   &__field_invisible-input {
     position: relative;
     display: flex;
     padding: 0;
     background: $color-white;
+  }
+
+  &__range {
+    @media (min-width: $md) {
+      grid-column: span 2 / span 2;
+    }
   }
 
   &__label_invisible-input {
@@ -167,7 +123,7 @@ function sendRequest(event: Event) {
     cursor: pointer;
   }
 
-  &__input-file {
+  &__file {
     position: absolute;
     inset: 0;
     z-index: -10;
@@ -190,6 +146,49 @@ function sendRequest(event: Event) {
 
     &:hover {
       background: #286690;
+    }
+  }
+}
+
+.range {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  color: $color-white;
+
+  &__header {
+    display: flex;
+    column-gap: 1rem;
+    justify-content: space-between;
+  }
+
+  &__percentage {
+    font-weight: 700;
+  }
+
+  &__input {
+    appearance: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+
+    &::-webkit-slider-runnable-track {
+      height: 0.375rem;
+      background: #bdbdc0;
+      border-radius: 0.5rem;
+      appearance: none;
+    }
+
+    &::-webkit-slider-thumb {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: -0.5rem;
+      background-color: $color-accent-light;
+      border: 3px solid $color-accent-dark;
+      border-radius: 50%;
+      appearance: none;
     }
   }
 }

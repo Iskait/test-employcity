@@ -6,11 +6,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="scheme__card">
-    <div class="scheme__image">
+  <div class="scheme__item scheme-card">
+    <div class="scheme-card__image">
       <component :is="schemeCard.component" />
     </div>
-    <div class="scheme__description">
+    <div class="scheme-card__description">
       {{ schemeCard.description }}
     </div>
   </div>
@@ -19,14 +19,12 @@ defineProps<{
 <style scoped lang="scss">
 @import "@/styles/variables";
 
-.scheme {
-  &__card {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.25rem;
-    align-items: center;
-    padding: 0 0.75rem;
-  }
+.scheme-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+  align-items: center;
+  padding: 0 0.75rem;
 
   &__image {
     display: flex;

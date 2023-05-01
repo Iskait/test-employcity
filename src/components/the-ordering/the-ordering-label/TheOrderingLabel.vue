@@ -47,7 +47,7 @@ import TheOrderingLabelScheme from "./the-ordering-label-scheme/TheOrderingLabel
 
   &__title {
     font-size: 1.75rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     color: $color-white;
     text-align: center;
