@@ -13,29 +13,27 @@ const links: Link[] = [
 </script>
 
 <template>
-  <div
-    :class="[
-      'header__links',
-      {
-        'hide-mobile': hidden,
-      },
-    ]"
-  >
-    <a
-      v-for="link in links"
-      :key="link.title"
-      :href="link.url"
-      class="header__link link"
-      >{{ link.title }}</a
+  <nav>
+    <ul
+      :class="[
+        'header__navigation',
+        {
+          'hide-mobile': hidden,
+        },
+      ]"
     >
-  </div>
+      <li v-for="link in links" :key="link.title">
+        <a :href="link.url" class="header__link link">{{ link.title }}</a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <style scoped lang="scss">
 @import "@/styles/variables";
 
 .header {
-  &__links {
+  &__navigation {
     display: flex;
     flex-direction: column;
     gap: 2rem;

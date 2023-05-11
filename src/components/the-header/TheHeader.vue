@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import TheHeaderBurger from "./TheHeaderBurger.vue";
-import TheHeaderLinks from "./TheHeaderLinks.vue";
+import TheHeaderNavigation from "./TheHeaderNavigation.vue";
 
 const isMobileMenuOpen = ref(false);
 
@@ -23,7 +23,7 @@ watch(isMobileMenuOpen, () => {
         <div class="header__logo">
           <span>LoremIpsum.</span><span class="text-accent-light">Net</span>
         </div>
-        <TheHeaderLinks hidden />
+        <TheHeaderNavigation hidden />
         <TheHeaderBurger
           :is-mobile-menu-open="isMobileMenuOpen"
           @toggle-menu="isMobileMenuOpen = !isMobileMenuOpen"
@@ -31,7 +31,7 @@ watch(isMobileMenuOpen, () => {
         <Transition name="fade">
           <div v-if="isMobileMenuOpen" class="header__menu mobile-menu">
             <div class="mobile-menu__container container">
-              <TheHeaderLinks />
+              <TheHeaderNavigation />
             </div>
           </div>
         </Transition>
